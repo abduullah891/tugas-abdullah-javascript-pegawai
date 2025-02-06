@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pegawai</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef; /* Latar belakang halaman */
+            margin: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #007BFF; /* Warna judul */
+        }
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan tabel */
+        }
+        th, td {
+            border: 1px solid #007BFF; /* Warna border */
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #007BFF; /* Warna latar belakang header */
+            color: white; /* Warna teks header */
+        }
+        tr:nth-child(even) {
+            background-color: #f2f9ff; /* Warna baris genap */
+        }
+        tr:nth-child(odd) {
+            background-color: #ffffff; /* Warna baris ganjil */
+        }
+        tr:hover {
+            background-color: #d1ecf1; /* Warna saat hover */
+        }
+        td {
+            transition: background-color 0.3s; /* Transisi warna */
+        }
+    </style>
+</head>
+<body>
+
+<h2>Data Pegawai</h2>
+
+<table id="pegawaiTable">
+    <tr>
+        <th>Nama</th>
+        <th>Jenis Kelamin</th>
+        <th>Umur</th>
+        <th>Gaji</th>
+        <th>Pekerjaan</th> <!-- Kolom Pekerjaan ditambahkan -->
+    </tr>
+</table>
+
+<script>
+    const pegawai = [
+        {
+            nama: "abdullah",
+            jenisKelamin: "laki-laki",
+            umur: 30,
+            gaji: "Rp 5.000.000",
+            pekerjaan: "Full stack developer" // Pekerjaan ditambahkan
+        },
+        {
+            nama: "andi",
+            jenisKelamin: "Pria",
+            umur: 28,
+            gaji: "Rp 4.500.000",
+            pekerjaan: "Front End developer" // Pekerjaan ditambahkan
+        },
+        {
+            nama: "fatimah",
+            jenisKelamin: "Perempuan",
+            umur: 25,
+            gaji: "Rp 4.000.000",
+            pekerjaan: "Back End developer" // Pekerjaan ditambahkan
+        },
+        {
+            nama: "syafiq",
+            jenisKelamin: "Pria",
+            umur: 35,
+            gaji: "Rp 6.000.000",
+            pekerjaan: "Full Stack mobile delevoper" // Pekerjaan ditambahkan
+        },
+        {
+            nama: "keyano",
+            jenisKelamin: "Pria",
+            umur: 27,
+            gaji: "Rp 4.200.000",
+            pekerjaan: "Back End developer" // Pekerjaan ditambahkan
+        }
+    ];
+
+    const table = document.getElementById('pegawaiTable');
+
+    pegawai.forEach(p => {
+        const row = table.insertRow();
+        const cellNama = row.insertCell(0);
+        const cellJenisKelamin = row.insertCell(1);
+        const cellUmur = row.insertCell(2);
+        const cellGaji = row.insertCell(3);
+        const cellPekerjaan = row.insertCell(4); // Sel untuk Pekerjaan
+
+        cellNama.textContent = p.nama;
+        cellJenisKelamin.textContent = p.jenisKelamin;
+        cellUmur.textContent = p.umur;
+        cellGaji.textContent = p.gaji;
+        cellPekerjaan.textContent = p.pekerjaan; // Menambahkan pekerjaan ke sel
+    });
+</script>
+
+</body>
+</html>
